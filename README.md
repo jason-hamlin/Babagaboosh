@@ -19,7 +19,7 @@ The voice library needs two different applications to process voices from Eleven
 1. Run `pip install --upgrade tiktoken`
 This is due to gpt-4o not being listed in the tiktoken library because it wasn't created when this repo was created.
 2. Run `pip install --force-reinstall httpx==0.27.2`.
-This is due to the 0.38 version installed doesn't work with the older libraries we're using.
+This is due to the version installed not working with some older libraries we're using.
 
 last note: if you are having issues with a certain module like Azure tts, just run the relevant python file from this repo.
 ## End of Fork additions
