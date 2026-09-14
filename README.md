@@ -8,7 +8,13 @@ If you would like a crappy video explanation of this project, I made a video cov
 Extra info I would have liked when I recently tried to set this up. I am not going to fix the issues I had in this repo, more like I'm just going to give info and trying not to screw up anything outside my scope of knowledge. This is being written in September 2026, can't guarantee more issues will not happen as time continues.
 
 With Microsoft Azure: You should create a "speech service" resource, do NOT just search TTS and subscribe to some module on the marketplace. You need to create the service yourself and copy the key once you're done. The region you need to put in path is also listed like 'eastus'.
-For pricing, technically you can do the free tier for Eleven Labs (I think, seems limiting), Microsoft Azure is free and will send errors if you cross their characters limit per month, OpenAI still needs $5 to access gpt-4o and it seems to cost (like $2? Need to test still) per 500k tokens (tokens means characters sent to the prompt, supposedly a discount is for chat history).
+
+For pricing
+1) Microsoft Azure: https://azure.microsoft.com/en-us/pricing/details/speech/
+2) Elevnlabs: https://elevenlabs.io/app/subscription/creative
+3) OpenAI: https://developers.openai.com/api/docs/pricing
+
+Technically you can do the free tier for Eleven Labs (I think, seems limiting), you might be able to do the API pricing which looks like a pay as you use pricing model (might be cheaper idk). Microsoft Azure is free and will send errors if you cross their characters limit per month, OpenAI still needs $5 to access gpt-4o and it seems to cost (like $2? Need to test still) per 500k tokens (tokens means characters sent to the prompt, supposedly there is a discount for chat history).
 
 ### Before running pip install requirements.txt
 The voice library needs two different applications to process voices from ElevenLabs.
@@ -20,6 +26,7 @@ The voice library needs two different applications to process voices from Eleven
 This is due to gpt-4o not being listed in the tiktoken library because it wasn't created when this repo was created.
 2. Run `pip install --force-reinstall httpx==0.27.2`.
 This is due to the version installed not working with some older libraries we're using.
+3. The model listed to use in eleven_labs.py, 'eleven_monolingual_v1' is no longer available, I changed it to 'eleven_flash_v2' after looking at their options but feel free to change it.
 
 last note: if you are having issues with a certain module like Azure tts, just run the relevant python file from this repo.
 ## End of Fork additions
