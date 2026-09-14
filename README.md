@@ -4,6 +4,26 @@ Written by DougDoug. Feel free to use this for whatever you want! Credit is appr
 
 If you would like a crappy video explanation of this project, I made a video covering the basics here: https://www.youtube.com/watch?v=vYE1rkIMj9w
 
+## Fork additions
+Extra info I would have liked when I recently tried to set this up. I am not going to fix the issues I had in this repo, more like I'm just going to give info and trying not to screw up anything outside my scope of knowledge. This is being written in September 2026, can't guarantee more issues will not happen as time continues.
+
+With Microsoft Azure: You should create a "speech service" resource, do NOT just search TTS and subscribe to some module on the marketplace. You need to create the service yourself and copy the key once you're done. The region you need to put in path is also listed like 'eastus'.
+For pricing, technically you can do the free tier for Eleven Labs (I think, seems limiting), Microsoft Azure is free and will send errors if you cross their characters limit per month, OpenAI still needs $5 to access gpt-4o and it seems to cost (like $2? Need to test still) per 500k tokens (tokens means characters sent to the prompt, supposedly a discount is for chat history).
+
+#Before running pip install requirements.txt
+The voice library needs two different applications to process voices from ElevenLabs.
+1. If you google MPV and download the relevant zip, extract and move the zip anywhere like C:/mpv, add the directory to the .exe to your PATH variable (in your environment).
+2. Do the above again instead of MPV, google ffmpeg, download, extract, move, add the .exe to path
+
+# After running the pip install requirements.txt from the below setup
+1. Run 'pip install --upgrade tiktoken'
+This is due to gpt-4o not being listed in the tiktoken library because it wasn't created when this repo was created.
+2. Run 'pip install --force-reinstall httpx==0.27.2'.
+This is due to the 0.38 version installed doesn't work with the older libraries we're using.
+
+last note: if you are having issues with a certain module like Azure tts, just run the relevant python file from this repo.
+## End of Fork additions
+
 ## SETUP:
 1) This was written in Python 3.9.2. Install page here: https://www.python.org/downloads/release/python-392/
 
